@@ -20,7 +20,9 @@ function BasicInfo() {
 
     function handleAge(e) {
         const value = e.target.value;
-        if (!isNaN(value)) {
+        if (isNaN(value)) {
+            window.alert("Age must be a number.");
+        } else {
             setAge(value);
         }
     }
