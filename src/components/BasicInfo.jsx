@@ -1,10 +1,10 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-function BasicInfo() {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [age, setAge] = useState('');
+function BasicInfo({ firstName, lastName, email, age, setFirstName, setLastName, setEmail, setAge }) {
+    // const [firstName, setFirstName] = useState('');
+    // const [lastName, setLastName] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [age, setAge] = useState('');
 
     function handleFirstName(e) {
         setFirstName(e.target.value);
