@@ -24,6 +24,26 @@ function Education() {
 
     return (
         <form onSubmit={e => e.preventDefault()}>
+            <input
+                placeholder="School"
+                value={school}
+                onChange={handleSchool}
+            />
+            <input 
+                placeholder="Degree"
+                value={degree}
+                onChange={handleDegree}
+            />
+            <input
+                placeholder="Start Year"
+                value={startYear}
+                onChange={handleStartYear}
+            />
+            <input
+                placeholder="End Year"
+                value={endYear}
+                onChange={handleEndYear}
+            />
         </form>
     )
 }
