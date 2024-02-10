@@ -6,6 +6,7 @@ function Experience() {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [desc, setDesc] = useState('');
+    const [submit, setSubmit] = useState(null);
 
     function handleCompany(e) {
         setCompanyName(e.target.value);
@@ -27,8 +28,21 @@ function Experience() {
         setDesc(e.target.value);
     }
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        const formData = {
+            companyName,
+            position,
+            startDate,
+            endDate,
+            desc
+        }
+        setSubmit(formData);
+    }
+
     return (
-        <form onSubmit={e => e.preventDefault()}>
+        <>
+        <form onSubmit={handleSubmit}>
             <input
                 placeholder="Company name"
                 value={companyName}
@@ -54,7 +68,19 @@ function Experience() {
                 value={desc}
                 onChange={handleDesc}
             />
+            <button type='submit'>Submit</button>
         </form>
+
+        {submit && (
+            <div>
+                <p>Company Name: {submit.companyName}</p>
+                <p>Position: {submit.position}</p>
+                <p>Start Date: {submit.startDate}</p>
+                <p>End Date: {submit.endDate}</p>
+                <p>Desc: {submit.desc}</p>
+            </div>
+        )}
+    </>
     )
 
 
